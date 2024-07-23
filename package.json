@@ -22,7 +22,7 @@
     "extract-lingui": "lingui extract --verbose",
     "compile-lingui": "lingui compile --verbose",
     "prebuild:prod": "npm run build:clean",
-    "build:prod": "export ENVIRONMENT_NAME=production && npm run compile-intl && cross-env NODE_ENV=production webpack --config internals/webpack/webpack.config.prod.js --color --progress --stats-children --stats-error-details",
+    "build:prod": "export ENVIRONMENT_NAME=production && npm run compile-lingui && cross-env NODE_ENV=production webpack --config internals/webpack/webpack.config.prod.js --color --progress --stats-children --stats-error-details",
     "build:dev": "export ENVIRONMENT_NAME=development && cross-env NODE_ENV=production webpack --config internals/webpack/webpack.config.dev.js --color --progress",
     "build:clean": "rimraf ./build",
     "start": "export ENVIRONMENT_NAME=local && concurrently -c green.bold,blue.bold -n WEBPACK,TYPESCRIPT \"cross-env NODE_ENV=development node server\" \"yarn tsc:watch\"",
