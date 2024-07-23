@@ -3,8 +3,6 @@ import { renderProvider, timeout } from '@utils/testUtils';
 import { HomeContainerTest as HomeContainer, mapDispatchToProps } from '../index';
 import { HomeContainerProps, LaunchData } from '../types';
 import { fireEvent, waitFor } from '@testing-library/react';
-import { createIntl } from 'react-intl';
-import { translationMessages } from '@app/i18n';
 import history from '@app/utils/history';
 import { requestGetLaunchList } from '../reducer';
 import { LAUNCHES } from './mockData';
@@ -17,7 +15,6 @@ describe('<HomeContainer /> tests', () => {
   beforeEach(() => {
     submitSpy = jest.fn();
     defaultProps = {
-      intl: createIntl({ locale: 'en', messages: translationMessages.en }),
       loading: true,
       dispatchLaunchList: submitSpy,
       launchData: {}

@@ -17,10 +17,9 @@ import homeContainerSaga from './saga';
 import { requestGetLaunchList } from './reducer';
 import { LaunchList, ErrorHandler } from '@components';
 import { colors, media } from '@app/themes';
-import { injectIntl } from 'react-intl';
 import useSort from './useSort';
 import usePaginate from './usePaginate';
-import { setQueryParam } from '@app/utils';
+import { setQueryParam, translate } from '@app/utils';
 import history from '@app/utils/history';
 import { RequestLaunchesActionPayload, HomeContainerProps } from './types';
 
@@ -47,8 +46,10 @@ const CustomHeader = styled.div`
 
 const CustomSearch = styled(Input)`
   && {
+    background: ${colors.secondaryText};
     .ant-input {
       padding-left: 0.5rem;
+      background-color: inherit;
     }
   }
 `;
@@ -75,7 +76,7 @@ const CustomFooter = styled.div`
   gap: 1rem;
 `;
 
-export function HomeContainer({ dispatchLaunchList, loading, launchData, intl, launchListError }: HomeContainerProps) {
+export function HomeContainer({ dispatchLaunchList, loading, launchData, launchListError }: HomeContainerProps) {
   const { order, handleClearSort, handleDateSort } = useSort();
   const { page, hasNextPage, hasPrevPage, handleNext, handlePrev, resetPage } = usePaginate(launchData);
 
@@ -118,15 +119,12 @@ export function HomeContainer({ dispatchLaunchList, loading, launchData, intl, l
           prefix={prefix}
           data-testid="search-bar"
           type="text"
-          placeholder={intl.formatMessage({ id: 'placeholder_text' })}
+          placeholder={translate('placeholder_text')}
           defaultValue={missionName || ''}
           onChange={handleSearch}
           autoFocus
         />
         <ButtonBox>
-          <Button disabled={!order} onClick={handleClearSort} data-testid="clear-sort">
-            CLEAR SORT
-          </Button>
           <SortSelect
             data-testid="sort-select"
             id="sort-select"
@@ -148,10 +146,13 @@ export function HomeContainer({ dispatchLaunchList, loading, launchData, intl, l
             <Select.Option value="desc">DESC</Select.Option>
             <Select.Option value="asc">ASC</Select.Option>
           </SortSelect>
+          <Button disabled={!order} onClick={handleClearSort} data-testid="clear-sort">
+            CLEAR SORT
+          </Button>
         </ButtonBox>
       </CustomHeader>
       <LaunchList launchData={launchData} loading={loading} />
-      <ErrorHandler loading={loading} launchListError={launchListError} />
+      <ErrorHandler loading={loading} launchListError={launchListError || ''} />
       <CustomFooter>
         <Button data-testid="prev-btn" type="primary" onClick={handlePrev} disabled={loading || !hasPrevPage}>
           PREV
@@ -170,8 +171,7 @@ HomeContainer.propTypes = {
     launches: PropTypes.array
   }),
   launchListError: PropTypes.string,
-  history: PropTypes.object,
-  intl: PropTypes.object
+  history: PropTypes.object
 };
 
 HomeContainer.defaultProps = {
@@ -193,11 +193,6 @@ export function mapDispatchToProps(dispatch: (arg0: AnyAction) => any) {
 
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
 
-export default compose(
-  withConnect,
-  memo,
-  injectSaga({ key: 'homeContainer', saga: homeContainerSaga }),
-  injectIntl
-)(HomeContainer);
+export default compose(withConnect, memo, injectSaga({ key: 'homeContainer', saga: homeContainerSaga }))(HomeContainer);
 
 export const HomeContainerTest = HomeContainer;

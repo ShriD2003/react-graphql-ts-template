@@ -13,7 +13,7 @@ const CustomCard = styled(Card)`
 
 interface ErrorHandlerTypes {
   loading: boolean;
-  launchListError?: string;
+  launchListError: string;
 }
 
 export function ErrorHandler({ loading, launchListError }: ErrorHandlerTypes) {
@@ -21,7 +21,7 @@ export function ErrorHandler({ loading, launchListError }: ErrorHandlerTypes) {
     return (
       <If condition={launchListError} otherwise={<T data-testid="default-message" id={launchListError} />}>
         <CustomCard data-testid="error-card">
-          <T data-testid="error-message" text={launchListError} />
+          <T data-testid="error-message" text={launchListError} id={launchListError} />
         </CustomCard>
       </If>
     );

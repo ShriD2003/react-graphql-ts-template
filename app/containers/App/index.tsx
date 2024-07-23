@@ -20,6 +20,7 @@ import Header from '@components/Header';
 import { colors } from '@themes/index';
 import Sidebar from '@app/components/Siderbar';
 import { HEADER_HEIGHT, MIN_SIDEBAR_WIDTH } from '@app/utils/constants';
+
 const theme = {
   fg: colors.primary,
   bg: colors.secondaryText,
@@ -39,7 +40,7 @@ export function App() {
       <Header />
       <CustomLayout>
         <Sidebar />
-        <Layout.Content>
+        <Layout.Content style={{ background: colors.secondaryText }}>
           <For
             ParentComponent={(props) => <Switch {...props} />}
             of={map(Object.keys(routeConfig))}

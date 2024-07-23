@@ -11,10 +11,10 @@ exports[`<LaunchDetails /> container tests should render and match the snapshot 
           class="T__StyledText-znbtqz-0 jrmeQy"
           data-testid="details"
         >
-          Oops you ran out of Oxygen!, dont worry, you can go back home and start exploring again!
+          Oops, this page doesn't exist!
         </p>
         <button
-          class="NotFoundPage__CustomButton-sc-13pqvdn-2 cmxmPU"
+          class="NotFoundPage__CustomButton-sc-13pqvdn-2 icuLGZ"
           data-testid="back-button"
         >
           Go Back

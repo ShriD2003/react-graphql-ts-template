@@ -1,7 +1,10 @@
 import find from 'lodash-es/find';
 import get from 'lodash-es/get';
+import { i18n } from '@lingui/core';
 import history from './history';
 import routeConstants from './routeConstants';
+
+export const translate = (id: string, values: Record<string, any> = {}) => i18n._({ id, values });
 
 export const getCurrentRouteDetails = (location: Partial<Location>) => {
   if (!get(location, 'pathname')) {

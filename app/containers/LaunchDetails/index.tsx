@@ -33,7 +33,7 @@ export function LaunchDetails({ launch, launchError, loading, dispatchLaunch }: 
       <If condition={!launch}>
         <NotFound />
       </If>
-      <ErrorHandler loading={loading} launchListError={launchError} />
+      <ErrorHandler loading={loading} launchListError={launchError || ''} />
     </div>
   );
 }

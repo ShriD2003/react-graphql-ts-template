@@ -15,6 +15,7 @@ module.exports = {
     '@babel/preset-typescript'
   ],
   plugins: [
+    'macros',
     '@babel/plugin-proposal-optional-chaining',
     '@babel/plugin-syntax-optional-chaining',
     'styled-components',

@@ -10,7 +10,6 @@ import styled from 'styled-components';
 import { Image } from 'antd';
 import notFoundImage from '@images/undraw_page_not_found_re_e9o6.svg';
 import { T } from '@components';
-import messages from './messages';
 import { colors } from '@app/themes';
 import history from '@utils/history';
 
@@ -36,16 +35,16 @@ const NotFoundContainer = styled.div`
 const CustomButton = styled.button`
   && {
     background-color: ${colors.primary};
+    border-radius: 8px;
+    padding: 4px;
     color: ${colors.secondaryText};
-    max-width: 30%;
-    margin: 2%;
     cursor: pointer;
   }
 `;
 export default function NotFound() {
   return (
     <NotFoundContainer>
-      <T marginBottom={0.5} data-testid="details" type="heading" text={messages.header.defaultMessage} />
+      <T marginBottom={0.5} data-testid="details" type="heading" id="not_found_page_container" />
       <CustomButton data-testid="back-button" onClick={() => history.push('/')}>
         Go Back
       </CustomButton>
