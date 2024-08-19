@@ -20,10 +20,10 @@ export interface LanguageProviderProps {
 }
 
 export function LanguageProvider({ locale, messages, children }: PropsWithChildren<LanguageProviderProps>) {
-  const localizedMessages = messages[locale!];
+  const localizedMessages = messages[locale];
 
-  i18n.load(locale!, localizedMessages);
-  i18n.activate(locale!);
+  i18n.load(locale, localizedMessages);
+  i18n.activate(locale);
 
   return <I18nProvider i18n={i18n}>{React.Children.only(children)}</I18nProvider>;
 }
