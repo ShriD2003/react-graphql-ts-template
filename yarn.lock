@@ -3881,7 +3881,7 @@
     resolve-from "^5.0.0"
     ts-dedent "^1.1.0"
 
-"@storybook/theming@^8.2.9":
+"@storybook/theming@^8.0.8", "@storybook/theming@^8.2.9":
   version "8.2.9"
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-8.2.9.tgz#6eb066f8957272c0bcb0078a8a9bc378ca9311d3"
   integrity sha512-OL0NFvowPX85N5zIYdgeKKaFm7V4Vgtci093vL3cDZT13LGH6GuEzJKkUFGuUGNPFlJc+EgTj0o6PYKrOLyQ6w==
@@ -18238,6 +18238,13 @@ store2@^2.7.1:
   version "2.12.0"
   resolved "https://registry.yarnpkg.com/store2/-/store2-2.12.0.tgz#e1f1b7e1a59b6083b2596a8d067f6ee88fd4d3cf"
   integrity sha512-7t+/wpKLanLzSnQPX8WAcuLCCeuSHoWdQuh9SB3xD0kNOM38DNf+0Oa+wmvxmYueRzkmh6IcdKFtvTa+ecgPDw==
+
+storybook-addon-intl@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/storybook-addon-intl/-/storybook-addon-intl-4.0.0.tgz#099df123ef78fa578767496c5f956040561c22d1"
+  integrity sha512-dWbG/NRl5JgT3VxkgaTirqHlvCFXcfxFSwnOfmq5IDyGHr6yNhtppYTbmHKILFua6CNMnrddoqRg+NDxsSpyTg==
+  dependencies:
+    "@storybook/theming" "^8.0.8"
 
 storybook-router@^0.3.4:
   version "0.3.4"
