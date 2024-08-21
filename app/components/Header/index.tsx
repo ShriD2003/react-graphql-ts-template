@@ -18,7 +18,7 @@ const StyledHeader = styled(Layout.Header)`
       height: ${(props) => props.theme.headerHeight};
       align-items: center;
       justify-content: center;
-      background-color: ${colors.primary};
+      background-color: ${colors.lightGreen};
       gap: 1rem;
       ${media.lessThan('mobile')`
       padding-left: ${(props) => props.theme.sidebarWidth}

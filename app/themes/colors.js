@@ -5,14 +5,16 @@
  * That allows to change them more easily later on.
  */
 
-const primary = '#000000';
-const text = '#212529';
+const primary = '#2F4858';
+const lightGreen = '#607274';
+const text = '#4D3D0C';
 const secondaryText = '#FFFFFF';
+const tertiaryText = '#4D3D0C';
 const secondary = '#b0b0b0';
 const success = '#28a745';
 const error = '#dc3545';
 const gotoStories = '#1890ff';
-const cardBg = '#d8d8d8';
+const cardBg = '#EFF1F3';
 
 const colors = {
   transparent: 'rgba(0,0,0,0)',
@@ -25,6 +27,8 @@ const colors = {
   secondaryText,
   gotoStories,
   cardBg,
+  lightGreen,
+  tertiaryText,
   theme: {
     lightMode: {
       primary,

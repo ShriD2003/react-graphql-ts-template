@@ -10,21 +10,22 @@ import React, { PropsWithChildren } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { IntlConfig, IntlProvider } from 'react-intl';
-import IntlGlobalProvider from '@components/IntlGlobalProvider';
+import { i18n } from '@lingui/core';
+import { I18nProvider } from '@lingui/react';
 import { makeSelectLocale } from './selectors';
 
-interface LanguageProviderProps {
-  locale?: string;
-  messages: Record<string, IntlConfig['messages']>;
+export interface LanguageProviderProps {
+  locale: string;
+  messages: Record<string, object>;
 }
 
 export function LanguageProvider({ locale, messages, children }: PropsWithChildren<LanguageProviderProps>) {
-  return (
-    <IntlProvider locale={locale!} key={locale} messages={messages[locale!]}>
-      <IntlGlobalProvider>{React.Children.only(children)}</IntlGlobalProvider>
-    </IntlProvider>
-  );
+  const localizedMessages = messages[locale];
+
+  i18n.load(locale, localizedMessages);
+  i18n.activate(locale);
+
+  return <I18nProvider i18n={i18n}>{React.Children.only(children)}</I18nProvider>;
 }
 
 LanguageProvider.propTypes = {

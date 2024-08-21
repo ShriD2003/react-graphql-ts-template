@@ -5,7 +5,7 @@
  */
 
 import React, { PropsWithChildren } from 'react';
-import { translate } from '@components/IntlGlobalProvider/index';
+import { translate } from '@app/utils';
 
 interface ErrorState {
   hasError: boolean;

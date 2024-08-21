@@ -1,26 +1,29 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import { IntlProvider } from 'react-intl';
+import { fireEvent } from '@testing-library/react';
+import { I18nProvider } from '@lingui/react';
+import { i18n } from '@lingui/core';
 
 import NotFoundPage from '../index';
 import history from '@app/utils/history';
+import { renderWithIntl } from '@app/utils/testUtils';
 
 describe('<NotFoundPage /> tests', () => {
   it('should render and match the snapshot', () => {
     const {
       container: { firstChild }
-    } = render(
-      <IntlProvider locale="en">
+    } = renderWithIntl(
+      <I18nProvider i18n={i18n}>
         <NotFoundPage />
-      </IntlProvider>
+      </I18nProvider>
     );
     expect(firstChild).toMatchSnapshot();
   });
+
   it('should take the user back to the homePage if the go back button is clicked', () => {
-    const { getByTestId } = render(
-      <IntlProvider locale="en">
+    const { getByTestId } = renderWithIntl(
+      <I18nProvider i18n={i18n}>
         <NotFoundPage />
-      </IntlProvider>
+      </I18nProvider>
     );
     const spy = jest.spyOn(history, 'push');
     fireEvent.click(getByTestId('back-button'));

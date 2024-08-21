@@ -1,27 +1,17 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { FormattedMessage, defineMessages } from 'react-intl';
 import { Provider } from 'react-redux';
-
-import ConnectedLanguageProvider, { LanguageProvider } from '../index';
-import configureStore, { RootState } from '../../../configureStore';
-
-import { translationMessages } from '../../../i18n';
+import { Trans } from '@lingui/react';
+import configureStore, { RootState } from '@app/configureStore';
+import { translationMessages, DEFAULT_LOCALE } from '@app/i18n';
 import { Store } from 'redux';
-
-const messages = defineMessages({
-  someMessage: {
-    id: 'some.id',
-    defaultMessage: 'This is some default message',
-    en: 'This is some en message'
-  }
-});
+import ConnectedLanguageProvider, { LanguageProvider } from '../index';
 
 describe('<LanguageProvider /> tests', () => {
   it('should render its children', () => {
     const children = <h1>Test</h1>;
     const { container } = render(
-      <LanguageProvider messages={messages} locale="en">
+      <LanguageProvider messages={translationMessages} locale={DEFAULT_LOCALE}>
         {children}
       </LanguageProvider>
     );
@@ -37,13 +27,14 @@ describe('<ConnectedLanguageProvider /> tests', () => {
   });
 
   it('should render the default language messages', () => {
+    const message = 'Ships';
     const { queryByText } = render(
       <Provider store={store}>
-        <ConnectedLanguageProvider messages={translationMessages}>
-          <FormattedMessage {...messages.someMessage} />
+        <ConnectedLanguageProvider locale={DEFAULT_LOCALE} messages={translationMessages}>
+          <Trans id="ships" values={{ ships: message }} />
         </ConnectedLanguageProvider>
       </Provider>
     );
-    expect(queryByText(messages.someMessage.defaultMessage)).not.toBeNull();
+    expect(queryByText(message)).not.toBeNull();
   });
 });

@@ -6,7 +6,7 @@
 
 import React, { memo } from 'react';
 import styled, { FlattenSimpleInterpolation } from 'styled-components';
-import { FormattedMessage } from 'react-intl';
+import { Trans } from '@lingui/react';
 import PropTypes from 'prop-types';
 import If from '@components/If';
 import { fonts } from '@themes/index';
@@ -32,18 +32,21 @@ const getFontStyle = (type: FontStyleType) => fonts.style[type];
 interface TProps {
   type?: FontStyleType;
   text?: string;
-  id?: string;
+  id: string;
   marginBottom?: string | number;
   values?: Record<string, React.ReactNode>;
 }
 
-export const T = ({ type = 'standard', text, id, marginBottom, values = {}, ...otherProps }: TProps) => (
-  <StyledText data-testid="t" font={getFontStyle(type)} marginBottom={marginBottom} {...otherProps}>
-    <If condition={id} otherwise={text}>
-      <FormattedMessage id={id} values={values} />
-    </If>
-  </StyledText>
-);
+export const T = (props: TProps) => {
+  const { type = 'standard', text, id, marginBottom, values = {}, ...otherProps } = props;
+  return (
+    <StyledText data-testid="t" font={getFontStyle(type)} marginBottom={marginBottom} {...otherProps}>
+      <If condition={!!id} otherwise={text}>
+        <Trans id={id} values={values} />
+      </If>
+    </StyledText>
+  );
+};
 
 T.propTypes = {
   id: PropTypes.string,

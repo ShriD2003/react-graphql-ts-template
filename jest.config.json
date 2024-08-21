@@ -7,7 +7,7 @@
     "!app/components/ScrollToTop/*.tsx",
     "!app/components/ErrorBoundary/*.tsx",
     "!app/global-styles.{ts}",
-    "!app/*/*/Loadable.{js,ts,tsx}",
+    "!app/*/*/loadable.{js,ts,tsx}",
     "!**/loadable.tsx",
     "!**/apiUtils.ts",
     "!**/testUtils.tsx",

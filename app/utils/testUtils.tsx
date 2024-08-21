@@ -1,5 +1,6 @@
 import React from 'react';
-import { IntlProvider } from 'react-intl';
+import { I18nProvider } from '@lingui/react';
+import { i18n } from '@lingui/core';
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { Route, Router } from 'react-router-dom';
@@ -7,15 +8,14 @@ import { ThemeProvider } from 'styled-components';
 import configureStore from '@app/configureStore';
 import { DEFAULT_LOCALE, translationMessages } from '@app/i18n';
 import ConnectedLanguageProvider from '@containers/LanguageProvider';
-import IntlGlobalProvider from '@components/IntlGlobalProvider';
 import history from './history';
 
-export const renderWithIntl = (children: React.ReactNode) =>
-  render(
-    <IntlProvider locale={DEFAULT_LOCALE} messages={translationMessages[DEFAULT_LOCALE]}>
-      <IntlGlobalProvider>{children}</IntlGlobalProvider>
-    </IntlProvider>
-  );
+export const renderWithIntl = (children: React.ReactNode) => {
+  i18n.load(DEFAULT_LOCALE, translationMessages[DEFAULT_LOCALE]);
+  i18n.activate(DEFAULT_LOCALE);
+
+  return render(<I18nProvider i18n={i18n}> {children} </I18nProvider>);
+};
 
 export const getComponentStyles = (Component: React.FC<any>, props = {}) => {
   renderWithIntl(Component(props));

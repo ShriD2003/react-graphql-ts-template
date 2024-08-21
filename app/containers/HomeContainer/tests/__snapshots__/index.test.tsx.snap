@@ -10,7 +10,7 @@ exports[`<HomeContainer /> tests should render and match the snapshot 1`] = `
         class="HomeContainer__CustomHeader-sc-1ly6omb-1 KzIrG"
       >
         <span
-          class="ant-input-affix-wrapper ant-input-affix-wrapper-focused HomeContainer__CustomSearch-sc-1ly6omb-2 grDFOh"
+          class="ant-input-affix-wrapper ant-input-affix-wrapper-focused HomeContainer__CustomSearch-sc-1ly6omb-2 eyZudg"
         >
           <span
             class="ant-input-prefix"
@@ -47,16 +47,6 @@ exports[`<HomeContainer /> tests should render and match the snapshot 1`] = `
         <div
           class="HomeContainer__ButtonBox-sc-1ly6omb-3 gSuRgZ"
         >
-          <button
-            class="ant-btn"
-            data-testid="clear-sort"
-            disabled=""
-            type="button"
-          >
-            <span>
-              CLEAR SORT
-            </span>
-          </button>
           <div
             class="ant-select HomeContainer__SortSelect-sc-1ly6omb-4 dTbpQd ant-select-single ant-select-show-arrow"
             data-testid="sort-select"
@@ -103,6 +93,16 @@ exports[`<HomeContainer /> tests should render and match the snapshot 1`] = `
               />
             </span>
           </div>
+          <button
+            class="ant-btn"
+            data-testid="clear-sort"
+            disabled=""
+            type="button"
+          >
+            <span>
+              CLEAR SORT
+            </span>
+          </button>
         </div>
       </div>
       <div

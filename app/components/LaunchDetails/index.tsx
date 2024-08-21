@@ -69,7 +69,7 @@ const CustomT = styled(T)`
 const launchLabelStyles = () => css`
   text-transform: uppercase;
   display: block;
-  color: ${colors.primary};
+  color: ${colors.text};
   font-size: smaller;
   font-weight: bold;
 `;
@@ -108,7 +108,14 @@ function LaunchDetails({ missionName, links, details, rocket, ships, loading }: 
       <Skeleton loading={loading} active>
         <DetailsCard>
           <If condition={!isEmpty(missionName)}>
-            <CustomT marginBottom={0.5} data-testid="mission-name" type="heading" text={missionName} />
+            <CustomT
+              marginBottom={0.5}
+              data-testid="mission-name"
+              type="heading"
+              text={missionName}
+              id="mission_name"
+              values={{ missionName }}
+            />
           </If>
 
           <If condition={!isEmpty(details)}>
@@ -120,7 +127,6 @@ function LaunchDetails({ missionName, links, details, rocket, ships, loading }: 
               <If condition={!isEmpty(rocket?.rocketName)}>
                 <CustomT
                   data-testid="rocket-name"
-                  type="standard"
                   id="name_label"
                   values={{ name: rocket?.rocketName, b: labelRenderer }}
                 />
@@ -128,7 +134,6 @@ function LaunchDetails({ missionName, links, details, rocket, ships, loading }: 
               <If condition={!isEmpty(rocket?.rocketType)}>
                 <CustomT
                   data-testid="rocket-type"
-                  type="standard"
                   id="type_label"
                   values={{ type: rocket?.rocketType, b: labelRenderer }}
                 />
