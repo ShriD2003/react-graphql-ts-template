@@ -226,6 +226,7 @@
     "rimraf": "2.6.3",
     "shelljs": "0.8.3",
     "storybook": "^8.2.9",
+    "storybook-addon-intl": "^4.0.0",
     "storybook-router": "^0.3.4",
     "style-loader": "2.0.0",
     "stylelint": "10.0.1",
