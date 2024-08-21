@@ -7,9 +7,12 @@
   "something_went_wrong": "Something went wrong",
   "fallback": "No results found for the search term.",
   "placeholder_text": "SEARCH BY MISSION NAME",
-  "details": "<b>Details</b> {details}",
-  "name_label": "<b>Name</b> {name}",
-  "type_label": "<b>Type</b> {type}",
+  "details": "<b>Details:</b> {details}",
+  "name_label": "Name: {name}",
+  "type_label": "Type: {type}",
   "ships": "Ships ",
-  "rocket": "Rocket "
+  "rocket": "Rocket ",
+  "mission_name": "{missionName}",
+  "launch_date": "{launchDate}",
+  "not_found_page_container": "Oops, this page doesn't exist!"
 }

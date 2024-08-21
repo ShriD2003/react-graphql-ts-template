@@ -1,5 +1,4 @@
 import { AnyAction } from 'redux';
-import { IntlShape } from 'react-intl';
 import { GqlQueryReponse } from '@app/utils/graphqlUtils';
 export interface Launch {
   id: string;
@@ -28,7 +27,6 @@ export interface HomeContainerProps {
   launchData: LaunchData;
   launchListError?: string;
   loading: boolean;
-  intl: IntlShape;
 }
 
 export type LaunchesResponse = GqlQueryReponse<{ launches?: Launch[] }>;

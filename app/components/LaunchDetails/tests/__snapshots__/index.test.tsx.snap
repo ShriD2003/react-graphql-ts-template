@@ -4,7 +4,7 @@ exports[`<LaundDetails> tests should render and match the snapshot 1`] = `
 <body>
   <div>
     <div
-      class="ant-card ant-card-bordered LaunchDetails__LaunchDetailsCard-asn7bn-0 dsEqMn"
+      class="ant-card ant-card-bordered LaunchDetails__LaunchDetailsCard-asn7bn-0 kwiAxS"
       data-testid="launch-details"
     >
       <div
@@ -27,15 +27,11 @@ exports[`<LaundDetails> tests should render and match the snapshot 1`] = `
             class="T__StyledText-znbtqz-0 TmgHn LaunchDetails__CustomT-asn7bn-4 dMaFrz"
             data-testid="details"
           >
-            <b
-              class="LaunchDetails__LaunchLabel-asn7bn-5 eWVLWT"
-            >
-              Details
-            </b>
+            Details:
              SpaceX's 21st ISS resupply mission.
           </p>
           <p
-            class="T__StyledText-znbtqz-0 gLJJxM LaunchDetails__LaunchLabelT-asn7bn-6 rxgOQ"
+            class="T__StyledText-znbtqz-0 gLJJxM LaunchDetails__LaunchLabelT-asn7bn-6 jvdXQM"
             data-testid="t"
           >
             Rocket 
@@ -47,27 +43,17 @@ exports[`<LaundDetails> tests should render and match the snapshot 1`] = `
               class="T__StyledText-znbtqz-0 TmgHn LaunchDetails__CustomT-asn7bn-4 dMaFrz"
               data-testid="rocket-name"
             >
-              <b
-                class="LaunchDetails__LaunchLabel-asn7bn-5 eWVLWT"
-              >
-                Name
-              </b>
-               Falcon 9
+              Name: Falcon 9
             </p>
             <p
               class="T__StyledText-znbtqz-0 TmgHn LaunchDetails__CustomT-asn7bn-4 dMaFrz"
               data-testid="rocket-type"
             >
-              <b
-                class="LaunchDetails__LaunchLabel-asn7bn-5 eWVLWT"
-              >
-                Type
-              </b>
-               FT
+              Type: FT
             </p>
           </div>
           <p
-            class="T__StyledText-znbtqz-0 gLJJxM LaunchDetails__LaunchLabelT-asn7bn-6 rxgOQ"
+            class="T__StyledText-znbtqz-0 gLJJxM LaunchDetails__LaunchLabelT-asn7bn-6 jvdXQM"
             data-testid="t"
           >
             Ships 
@@ -79,23 +65,13 @@ exports[`<LaundDetails> tests should render and match the snapshot 1`] = `
               class="T__StyledText-znbtqz-0 TmgHn LaunchDetails__CustomT-asn7bn-4 dMaFrz"
               data-testid="ship-name"
             >
-              <b
-                class="LaunchDetails__LaunchLabel-asn7bn-5 eWVLWT"
-              >
-                Name
-              </b>
-               Ship 1
+              Name: Ship 1
             </p>
             <p
               class="T__StyledText-znbtqz-0 TmgHn LaunchDetails__CustomT-asn7bn-4 dMaFrz"
               data-testid="ship-type"
             >
-              <b
-                class="LaunchDetails__LaunchLabel-asn7bn-5 eWVLWT"
-              >
-                Type
-              </b>
-               Type 1
+              Type: Type 1
             </p>
           </div>
         </div>

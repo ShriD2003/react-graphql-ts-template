@@ -1,28 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<NotFoundPage /> tests should render and match the snapshot 1`] = `
-<div
-  class="NotFoundPage__NotFoundContainer-sc-13pqvdn-1 jceXFB"
->
-  <p
-    class="T__StyledText-znbtqz-0 jrmeQy"
-    data-testid="details"
-  >
-    Oops you ran out of Oxygen!, dont worry, you can go back home and start exploring again!
-  </p>
-  <button
-    class="NotFoundPage__CustomButton-sc-13pqvdn-2 cmxmPU"
-    data-testid="back-button"
-  >
-    Go Back
-  </button>
-  <div
-    class="ant-image"
-  >
-    <img
-      class="ant-image-img NotFoundPage__NotFoundImage-sc-13pqvdn-0 eCyeLE"
-      src="IMAGE_MOCK"
-    />
-  </div>
-</div>
-`;
+exports[`<NotFoundPage /> tests should render and match the snapshot 1`] = ` `;

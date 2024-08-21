@@ -47,10 +47,17 @@ function LaunchItem({ missionName, launchDateUtc, links, id }: Launch) {
   return (
     <LaunchCard data-testid="launch-item" onClick={goToLaunch}>
       <If condition={!isEmpty(missionName)}>
-        <T data-testid="mission-name" marginBottom={1.5} type="subheading" text={missionName} />
+        <T
+          data-testid="mission-name"
+          marginBottom={1.5}
+          type="subheading"
+          text={missionName}
+          id="mission_name"
+          values={{ missionName }}
+        />
       </If>
       <If condition={!isEmpty(launchDateUtc)}>
-        <T text={memoizedLaunchDate} />
+        <T text={memoizedLaunchDate} id="launch_date" values={{ launchDate: memoizedLaunchDate }} />
       </If>
       <If condition={!isEmpty(links)}>
         <If condition={!isEmpty(links.wikipedia)}>
