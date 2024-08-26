@@ -54,7 +54,11 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "initialize": "git checkout --orphan temp-branch && git add -A && git commit -m 'Initial commit' && git branch -D master && git branch -m master",
-    "generate": "react-generate"
+    "generate": "react-generate", 
+      "test:e2e": "npx playwright test",
+    "test-storybook": "test-storybook",
+    "test-storybook:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn build-storybook:dev --quiet && http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn test-storybook\""
+  
   },
   "browserslist": [
     "last 2 versions",
@@ -86,11 +90,13 @@
     "@storybook/addon-controls": "^8.2.9",
     "@storybook/addon-essentials": "^8.2.9",
     "@storybook/addon-interactions": "^8.2.9",
+    "@storybook/test-runner": "^0.19.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "antd": "^4.9.3",
     "apisauce": "2.1.1",
     "apollo-boost": "^0.4.9",
+    "axe-playwright": "^2.0.2",
     "chalk": "4.1.1",
     "compression": "1.7.4",
     "core-js": "3.6.5",
