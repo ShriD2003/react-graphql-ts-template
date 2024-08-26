@@ -32,6 +32,6 @@ module.exports = ({ config }) => {
     include: path.resolve(__dirname, '../')
   });
   config.resolve.modules.push('app');
-  config.resolve.extensions.push('.js', '.jsx', '.react.js');
+  config.resolve.extensions.push('.js', '.jsx', '.react.js', '.ts', '.tsx');
   return config;
 };
